@@ -1,0 +1,27 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+.carousel-text {
+    flex: 1;
+}
+
+.carousel-images {
+    flex: 1;
+    overflow: hidden;
+}
+
+.carousel-inner img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
