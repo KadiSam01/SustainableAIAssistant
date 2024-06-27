@@ -1,2 +1,2 @@
 # SustainableAIAssistant-
-Welcome to my first project
+Welcome to Sustainable Assistant AI
