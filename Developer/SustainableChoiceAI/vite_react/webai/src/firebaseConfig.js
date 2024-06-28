@@ -1,14 +1,30 @@
+// src/firebase.js
+
+// Import the initializeApp function from the firebase/app module
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider,signInWithPopup,signOut } from "firebase/auth";
+
+// Import the getAuth, GoogleAuthProvider, signInWithPopup, and signOut functions from the firebase/auth module
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+
+// Define the configuration object with your Firebase project details
 const firebaseConfig = {
-    apiKey: "AIzaSyCfS8bHnZjOcU6wLb9gJX0Fw3wZGfW9p0M",
-    authDomain: "webai-1b9a0.firebaseapp.com",
-    projectId: "webai-1b9a0",
-    storageBucket: "webai-1b9a0.appspot.com",
-    messagingSenderId: "443587249730",
-    appId: "1:443587249730:web:7e0e7d0a0e6b0f4a6c8b7b"
-  };
-  const app = initializeApp(firebaseConfig);
-  export const auth = getAuth(app);
-  export const provider = new GoogleAuthProvider();
-}
+  apiKey: "YOUR_API_KEY",                      // Your Firebase API key
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",  // Your Firebase project's authentication domain
+  projectId: "YOUR_PROJECT_ID",                 // Your Firebase project ID
+  storageBucket: "YOUR_PROJECT_ID.appspot.com", // Your Firebase project's storage bucket
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // Your Firebase project's messaging sender ID
+  appId: "YOUR_APP_ID",                         // Your Firebase project's app ID
+  measurementId: "YOUR_MEASUREMENT_ID"          // Your Firebase project's measurement ID (optional)
+};
+
+// Initialize Firebase with the configuration object
+const app = initializeApp(firebaseConfig);
+
+// Get the authentication instance from Firebase
+const auth = getAuth(app);
+
+// Create an instance of the GoogleAuthProvider, which is used for Google sign-in
+const provider = new GoogleAuthProvider();
+
+// Export the authentication instance, provider, and authentication methods for use in other parts of your application
+export { auth, provider, signInWithPopup, signOut };
