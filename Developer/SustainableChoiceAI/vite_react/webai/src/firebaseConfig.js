@@ -1,30 +1,24 @@
-// src/firebase.js
-
-// Import the initializeApp function from the firebase/app module
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Import the getAuth, GoogleAuthProvider, signInWithPopup, and signOut functions from the firebase/auth module
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-
-// Define the configuration object with your Firebase project details
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",                      // Your Firebase API key
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",  // Your Firebase project's authentication domain
-  projectId: "YOUR_PROJECT_ID",                 // Your Firebase project ID
-  storageBucket: "YOUR_PROJECT_ID.appspot.com", // Your Firebase project's storage bucket
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // Your Firebase project's messaging sender ID
-  appId: "YOUR_APP_ID",                         // Your Firebase project's app ID
-  measurementId: "YOUR_MEASUREMENT_ID"          // Your Firebase project's measurement ID (optional)
+  apiKey: "AIzaSyCyo5oX0KUWJ2yFsYP3TB2tn2pHg4CSoTM",
+  authDomain: "sustainableai.firebaseapp.com",
+  projectId: "sustainableai",
+  storageBucket: "sustainableai.appspot.com",
+  messagingSenderId: "237102968463",
+  appId: "1:237102968463:web:582ebaee7063c4893b8afa",
+  measurementId: "G-L2CEZ1L9TW"
 };
 
-// Initialize Firebase with the configuration object
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Get the authentication instance from Firebase
 const auth = getAuth(app);
-
-// Create an instance of the GoogleAuthProvider, which is used for Google sign-in
 const provider = new GoogleAuthProvider();
 
-// Export the authentication instance, provider, and authentication methods for use in other parts of your application
-export { auth, provider, signInWithPopup, signOut };
+export { auth, provider };

@@ -1,27 +1,19 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { auth, provider } from './firebaseConfig';
 
-const firebaseConfig = {
-  // your Firebase config
-};
-
-firebase.initializeApp(firebaseConfig);
-
-const Login = React.memo(() => {
-  const auth = firebase.auth();
+const Login = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
-  const handleGoogleSignIn = React.useCallback(() => signInWithGoogle(), [signInWithGoogle]);
+  const handleGoogleSignIn = () => signInWithGoogle(provider);
 
-  if (loading || error || user) {
-    return null;
-  }
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  if (user) return <p>Welcome, {user.displayName}</p>;
 
   return (
     <button onClick={handleGoogleSignIn}>Sign in with Google</button>
   );
-});
+};
 
 export default Login;
