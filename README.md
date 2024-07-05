@@ -4,7 +4,7 @@ Sustainable AI Assistant is a web application designed to help users make sustai
 
 ## Important information 
 
-- [Project Overview]
+- [Project Overview](#project-overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
@@ -16,8 +16,8 @@ Sustainable AI Assistant is a web application designed to help users make sustai
 
 ## Project Overview
 
-Coming soon
-
+Sustainable AI Assistant is an AI assistant that encourages us to make sustainable choices by providing recommendations that encourages sustainability
+This project will be completed by the end of 2024 if I am not lazy
 ## Features
 
 -Coming soon 
